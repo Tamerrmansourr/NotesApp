@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
-import 'package:notes_app/widgets/custom_notes_item.dart';
+import 'package:notes_app/widgets/notes_list_view.dart';
 
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({super.key});
@@ -9,26 +9,12 @@ class NotesViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: ListView(
+      child: Column(
         children: [
           SizedBox(height: 50),
           CustomAppBar(),
           SizedBox(height: 20),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: 6,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 12.0),
-                child: CustomNotesItem(
-                  date: 'Aug 25,2025',
-                  desc: 'Build your career with Tharwat Samy',
-                  title: 'Flutter tips',
-                ),
-              );
-            },
-          ),
+          Expanded(child: NotesListView()),
         ],
       ),
     );
