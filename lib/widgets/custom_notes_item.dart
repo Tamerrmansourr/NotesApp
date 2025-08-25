@@ -11,7 +11,7 @@ class CustomNotesItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top:24,bottom: 24,left: 12),
+      padding: EdgeInsets.only(top: 25,bottom: 25,left: 12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: Colors.amber,
@@ -37,7 +37,7 @@ class CustomNotesItem extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 16),
+            padding: const EdgeInsets.only(right: 16,top:20),
             child: Text(date, style: TextStyle(color: Colors.grey.shade800)),
           ),
         ],
