@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/custom_text_form_field.dart';
 
 void showModalSheet(BuildContext context) {
   showModalBottomSheet(
@@ -16,7 +17,18 @@ void showModalSheet(BuildContext context) {
               topRight: const Radius.circular(20),
             ),
           ),
-          child: Center(child: Text("This is a modal sheet")),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              
+              children: [
+                SizedBox(height: 20,),
+                CustomTextFormField(hintText: 'Titl',),
+                SizedBox(height: 20,),
+                CustomTextFormField(hintText: 'Title',),
+              ],
+            ),
+          ),
         ),
       );
     },
