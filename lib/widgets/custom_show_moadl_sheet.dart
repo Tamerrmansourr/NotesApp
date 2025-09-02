@@ -6,7 +6,7 @@ void showModalSheet(BuildContext context) {
     context: context,
     builder: (builder) {
       return Container(
-        height: 400,
+        height: 500,
         color: Colors.transparent, //could change this to Color(0xFF737373),
         //so you don't have to change MaterialApp canvasColor
         child: Container(
@@ -20,12 +20,11 @@ void showModalSheet(BuildContext context) {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
-              
               children: [
                 SizedBox(height: 20,),
                 CustomTextFormField(hintText: 'Title',),
                 SizedBox(height: 20,),
-                CustomTextFormField(hintText: 'Title',),
+                CustomTextFormField(hintText: 'Content',maxLines: 5,),
               ],
             ),
           ),

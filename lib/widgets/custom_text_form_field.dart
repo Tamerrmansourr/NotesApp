@@ -6,15 +6,18 @@ class CustomTextFormField extends StatelessWidget {
     this.hintText,
     this.onChanged,
     this.obscureText = false,
-    this.icon
+    this.icon,
+    this.maxLines = 1,
   });
   String? hintText;
   Function(String)? onChanged;
   final bool? obscureText;
   Icon? icon;
+  int? maxLines;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: maxLines,
       obscureText: obscureText!,
       validator: (value) {
         if (value!.isEmpty) {
@@ -26,10 +29,13 @@ class CustomTextFormField extends StatelessWidget {
         filled: true,
         contentPadding: EdgeInsets.all(16),
         hintText: hintText,
-        hintStyle: TextStyle(fontSize: 14,color: Colors.cyanAccent),
+        hintStyle: TextStyle(
+          fontSize: 14,
+          // color: Colors.cyanAccent,
+        ),
         border: OutlineInputBorder(
-          borderSide: BorderSide(style: BorderStyle.none,color: Colors.white),
-          
+          borderSide: BorderSide(style: BorderStyle.none, color: Colors.white),
+
           borderRadius: BorderRadius.circular(5),
         ),
         prefixIcon: icon,
