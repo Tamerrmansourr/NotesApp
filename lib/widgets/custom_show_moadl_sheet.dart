@@ -23,7 +23,7 @@ void showModalSheet(BuildContext context) {
               
               children: [
                 SizedBox(height: 20,),
-                CustomTextFormField(hintText: 'Titl',),
+                CustomTextFormField(hintText: 'Title',),
                 SizedBox(height: 20,),
                 CustomTextFormField(hintText: 'Title',),
               ],
