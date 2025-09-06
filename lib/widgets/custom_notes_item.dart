@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/widgets/edit_notes_view_body.dart';
 
 class CustomNotesItem extends StatelessWidget {
-  CustomNotesItem({
+  const CustomNotesItem({
     super.key,
     required this.title,
     required this.desc,
     required this.date,
   });
-  String title, desc, date;
+  final String title, desc, date;
   @override
   Widget build(BuildContext context) {
     return Container(
