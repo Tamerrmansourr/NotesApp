@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField({
+  const CustomTextFormField({
     super.key,
     this.hintText,
     this.onChanged,
@@ -9,11 +9,11 @@ class CustomTextFormField extends StatelessWidget {
     this.icon,
     this.maxLines = 1,
   });
-  String? hintText;
-  Function(String)? onChanged;
+  final String? hintText;
+  final Function(String)? onChanged;
   final bool? obscureText;
-  Icon? icon;
-  int? maxLines;
+  final Icon? icon;
+  final int? maxLines;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
