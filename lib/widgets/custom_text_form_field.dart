@@ -4,13 +4,13 @@ class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
     this.hintText,
-    this.onChanged,
+    this.onSaved,
     this.obscureText = false,
     this.icon,
     this.maxLines = 1,
   });
   final String? hintText;
-  final Function(String)? onChanged;
+  final Function(String?)? onSaved;
   final bool? obscureText;
   final Icon? icon;
   final int? maxLines;
@@ -20,12 +20,13 @@ class CustomTextFormField extends StatelessWidget {
       maxLines: maxLines,
       obscureText: obscureText!,
       validator: (value) {
-        if (value!.isEmpty) {
+        if (value?.isEmpty ?? true) {
           return 'field required';
+        } else {
+          return null;
         }
-        return null;
       },
-      onChanged: onChanged,
+      onSaved: onSaved,
       decoration: InputDecoration(
         filled: true,
         contentPadding: EdgeInsets.all(16),
