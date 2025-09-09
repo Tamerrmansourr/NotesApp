@@ -5,7 +5,7 @@ import 'package:notes_app/views/widgets/edit_notes_view_body.dart';
 
 class NotesListView extends StatelessWidget {
   const NotesListView({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
