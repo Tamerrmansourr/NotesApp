@@ -1,18 +1,19 @@
-part of 'notes_cubit.dart';
+import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_model.dart';
 
 @immutable
-sealed class NotesCubitState {}
+sealed class NotesState {}
 
-final class NotesCubitInitial extends NotesCubitState {}
+final class NotesInitial extends NotesState {}
 
-final class NotesCubitLoading extends NotesCubitState {}
+final class NotesLoading extends NotesState {}
 
-final class NotesCubitFailure extends NotesCubitState {
+final class NotesFailure extends NotesState {
   final String errorMessage;
-  NotesCubitFailure(this.errorMessage);
+  NotesFailure(this.errorMessage);
 }
 
-final class NotesCubitSuccess extends NotesCubitState {
+final class NotesSuccess extends NotesState {
   final List<NoteModel> notes;
-  NotesCubitSuccess(this.notes);
+  NotesSuccess(this.notes);
 }
