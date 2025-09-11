@@ -24,9 +24,7 @@ class NotesListView extends StatelessWidget {
                   Navigator.pushNamed(context, EditNotesViewBody.id);
                 },
                 child: CustomNotesItem(
-                  date: 'Aug 25,2025',
-                  desc: 'Build your career with Tharwat Samy',
-                  title: 'Flutter tips',
+                  note: notes[index],
                 ),
               ),
             );
