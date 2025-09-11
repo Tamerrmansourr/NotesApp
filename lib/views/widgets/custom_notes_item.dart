@@ -21,16 +21,18 @@ class CustomNotesItem extends StatelessWidget {
           ListTile(
             title: Text(
               note.title,
-              style: TextStyle(color: Colors.black, fontSize: 18),
+              style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
             ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 16),
-              child: Text(note.subTitle, style: TextStyle(color: Colors.grey.shade800)),
+              child: Text(note.subTitle, style: TextStyle(color: Colors.grey.shade800, fontSize: 16)),
             ),
             trailing: Padding(
               padding: const EdgeInsets.only(bottom: 15),
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                },
                 icon: Icon(Icons.delete, color: Colors.black, size: 30),
               ),
             ),

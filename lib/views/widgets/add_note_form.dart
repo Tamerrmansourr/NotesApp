@@ -43,12 +43,14 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(height: 40),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
-              String formattedDate = DateFormat('yyyy-MM-dd – kk:mm').format(DateTime.now());
               return CustomButton(
                 isLoading: state is AddNoteLoading ? true : false,
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
+                    // String formattedDate = .format(DateTime.now());
+                    var date = DateTime.now();
+                    var formattedDate = DateFormat.yMMMEd().format(date);
                     var noteModel = NoteModel(
                       title: title!,
                       subTitle: subTitle!,
