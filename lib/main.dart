@@ -6,8 +6,7 @@ import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/simple_bloc_observer.dart';
 import 'package:notes_app/views/notes_view.dart';
-import 'package:notes_app/views/widgets/edit_notes_view_body.dart';
-
+import 'package:notes_app/views/widgets/edit_note_view.dart';
 void main() async {
   Bloc.observer = SimpleBlocObserver();
   await Hive.initFlutter();
@@ -17,7 +16,8 @@ void main() async {
 }
 
 class NotesApp extends StatelessWidget {
-  const NotesApp({super.key});
+  const NotesApp({super.key, this.note});
+  final NoteModel? note;
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -25,8 +25,8 @@ class NotesApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
-          NotesView.id: (context) => NotesView(),
-          EditNotesViewBody.id: (context) => EditNotesViewBody(),
+          // NotesView.id: (context) => NotesView(),
+          // EditNoteView.id: (context) => EditNoteView(),
         },
         theme: ThemeData.dark(),
         home: NotesView(),
